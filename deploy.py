@@ -36,22 +36,22 @@ def install_software(ssh, password):
         time.sleep(2)
 
 def clone_repo(ssh, repo_url):
-    command = f"git clone {repo_url} /home/mmesoma/app"
+    command = f"git clone {repo_url} /home/your-username/app"
     execute_command(ssh, command)
 
 def deploy_flask_app(ssh):
     commands = [
-        "cd /home/mmesoma/app && docker build -t flask-app .",
+        "cd /home/your-username/app && docker build -t flask-app .",
         "docker run -d -p 5000:5000 flask-app"
     ]
     for command in commands:
         execute_command(ssh, command)
 
 def main():
-    ip = "10.0.2.15"
-    username = "mmesoma"
-    password = "mgbaraja1!"
-    repo_url = "https://github.com/Mmesomadavid/flask-docker-app.git"
+    ip = "your-server-ip"  # Example: "192.168.1.100"
+    username = "your-ssh-username"  # Example: "ubuntu"
+    password = "your-ssh-password"  # Provide the SSH password
+    repo_url = "your-github-repo-url"  # Example: "https://github.com/yourname/yourrepo.git"
 
     ssh = ssh_connect(ip, username, password)
 
