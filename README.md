@@ -1,4 +1,4 @@
-# 🚀 Automated Server Provisioning and Flask App Deployment with Python
+# Automated Server Provisioning and Flask App Deployment with Python
 
 This project is a **Python automation script** that connects to a remote Linux server via **SSH**, installs necessary software (**Docker**, **Git**, **Nginx**), pulls a web application from **GitHub**, and deploys it inside a Docker container — **all automatically**.
 
